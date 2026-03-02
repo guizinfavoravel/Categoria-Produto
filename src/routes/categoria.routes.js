@@ -1,11 +1,11 @@
 import express from 'express';
 import CategoriaController from '../controller/categoriacontroller.js';
-const categoriaRoutes = express();
+const categoriaRoutes = express.Router();
 const { produtoController } = import('../controller/produtocontroller.js');
 
-categoriaRoutes.get('/categoria/:id', CategoriaController.selecionarPorId);
-categoriaRoutes.post('/categoria', CategoriaController.inserirProduto);
-categoriaRoutes.put('/categoria/:id', CategoriaController.alterarProduto);
-categoriaRoutes.delete('/categoria/:id', CategoriaController.excluirProduto);
+categoriaRoutes.get('/categoria/:id', CategoriaController.listarPorId);
+categoriaRoutes.post('/categoria', CategoriaController.inserirCategoria);
+categoriaRoutes.put('/categoria/:id', CategoriaController.atualizarCategoria);
+categoriaRoutes.delete('/categoria/:id', CategoriaController.excluirCategoria);
 
 export default categoriaRoutes;
